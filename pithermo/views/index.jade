@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p At the moment the temperature is #{avgTemperature}° in the room
+  header
+    img.weather-icon(src="/images/sun.svg")
+    h1.temperature #{avgTemperature}° 
+    p 10 last minutes average

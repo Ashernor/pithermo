@@ -1,8 +1,35 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #fb415e;
+  color: #fff;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+header {
+  width: 440px;
+  margin: 30px auto;
+}
+
+img.weather-icon {
+  width: 150px;
+  float: left;
+}
+
+h1.temperature {
+  font-size: 8em;
+  float: left;
+  font-weight: 300;
+  margin-left: 25px;
+  line-height: 1;
+  margin-top: 9px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+header p {
+  float: right;
+  margin-top: 0;
+  width: 250px;
+  text-align: left;
 }
