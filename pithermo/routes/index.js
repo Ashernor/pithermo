@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
       let temperatures = _.meanBy(_.takeRight(surveys, 5), 'temperature');
       //ATM there is a small problem with the sensor
       temperatures-=7;
-      temperatures = temperatures.toLocaleString('en-US', {minimumIntegerDigits: 2});
+      temperatures = temperatures.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-      let lastSurvey = _.takeRight(surveys, 1)[0].date.toLocaleString('fr-FR', {minimumIntegerDigits: 2});
+      let lastSurvey = _.takeRight(surveys, 1)[0].date.toLocaleString('fr-FR');
       // No we can order the dagta to to make a nice graph
       // Survey by day
       res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey});
