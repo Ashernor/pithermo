@@ -12,13 +12,14 @@ router.get('/', function(req, res, next) {
       // By taking the last 5 surveys we make an average on th last 10 minutes
       let temperatures = _.meanBy(_.takeRight(surveys, 5), 'temperature');
       //ATM there is a small problem with the sensor
-      temperatures-=7;
+      temperatures-=1;
       temperatures = temperatures.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-
       let lastSurvey = _.takeRight(surveys, 1)[0].date.toLocaleString('fr-FR');
       // No we can order the dagta to to make a nice graph
       // Survey by day
-      res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey});
+      let graphSurveys = _.map(_.takeRight(surveys, 22), 'temperature');
+      console.log(graphSurveys);
+      res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey, graph: graphSurveys});
     }
   });
 });

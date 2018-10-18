@@ -5,3 +5,15 @@ block content
     img.weather-icon(src="/images/sun.svg")
     h1.temperature #{avgTemperature}° 
     p Last survey @ #{lastSurvey}
+   footer 
+    div(class="ct-chart")
+      script.
+        new Chartist.Line('.ct-chart', {
+          //labels: [1, 2, 3, 4, 5, 6, 7, 8],
+          series: [
+            [#{graph}]
+          ]
+        }, {
+          low: 0,
+          showArea: true
+        }); 

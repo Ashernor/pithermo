@@ -34,3 +34,7 @@ header p {
   text-align: left;
   font-size: 0.9em;
 }
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+  stroke: #fff;
+}
