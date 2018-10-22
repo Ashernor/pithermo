@@ -35,6 +35,17 @@ header p {
   font-size: 0.9em;
 }
 
+.ct-chart {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  min-height: 300px
+}
+
+.ct-chart svg {
+  min-height: 300px
+}
+
 .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
   stroke: #fff;
 }

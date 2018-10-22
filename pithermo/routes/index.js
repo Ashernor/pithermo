@@ -28,6 +28,9 @@ router.get('/', function(req, res, next) {
           sum = 0;
         }
       });
+
+      avgDay.shift();
+
       res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey, graph: avgDay});
     }
   });
