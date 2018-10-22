@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
         if (index % 30 == 0 ) {
           avgDay.push((sum/30)-2);
           sum = 0;
-          timeArray.push(graphSurveysTime[index]);
+          timeArray.push(String(graphSurveysTime[index]));
         }
       });
       // Remove first value
