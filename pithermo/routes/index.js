@@ -18,8 +18,17 @@ router.get('/', function(req, res, next) {
       // No we can order the dagta to to make a nice graph
       // Survey by day
       let graphSurveys = _.map(_.takeRight(surveys, 720), 'temperature');
-      console.log(graphSurveys);
-      res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey, graph: graphSurveys});
+      let sum = 0;
+      let avgDay = [];
+      graphSurveys.forEach((value, index) => {
+        // If it's a multiple of 24 we have an hour
+        sum+=value;
+        if (index % 30 == 0 ) {
+          avgDay.push((sum/30)-2);
+          sum = 0;
+        }
+      });
+      res.render('index', { title: 'Temperature dans le salon', avgTemperature: temperatures, lastSurvey: lastSurvey, graph: avgDay});
     }
   });
 });
