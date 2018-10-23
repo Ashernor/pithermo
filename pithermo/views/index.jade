@@ -9,12 +9,19 @@ block content
     div(class="ct-chart")
       script.
         new Chartist.Line('.ct-chart', {
-          //labels: [#{timeArray}],
+          labels: [#{timeArray}],
           series: [
             [#{graph}]
           ]
         }, {
           low: 18,
           high: 21,
-          showArea: true
+          showArea: true,
+          axisX: {
+            type: Chartist.FixedScaleAxis,
+            divisor: 5,
+            labelInterpolationFnc: function(value) {
+              return moment(value).format('LT');
+            }
+          }
         }); 
